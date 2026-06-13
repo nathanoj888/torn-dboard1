@@ -157,7 +157,7 @@ function loadSavedTargetsUI(){
   updateTargetSavedCount(); setTargetSoundOn(localStorage.getItem(KEY_STORE.target_sound)==='1'); setTargetAutoOn(localStorage.getItem(KEY_STORE.target_auto)==='1');
   if($('tgSortDirBtn')) $('tgSortDirBtn').textContent=tSortDir==='asc'?'↑':'↓'; setTargetStatusChip('all',true); if(typeof window.setTargetTravelIntelChip==='function') window.setTargetTravelIntelChip('all',true); updateTargetSelectedCount();
 }
-function setTargetStatusChip(val,silent){ tStatusChip=val||'all'; ['all','Okay','Hospital','Jail','Traveling','Abroad'].forEach(x=>{ const el=$('tgChip_'+x); if(el) el.classList.toggle('on',x===tStatusChip); }); if(!silent) renderTargets(); }
+window.setTargetStatusChip=function(val,silent){ tStatusChip=val||'all'; ['all','Okay','Hospital','Jail','Traveling','Abroad'].forEach(x=>{ const el=$('tgChip_'+x); if(el) el.classList.toggle('on',x===tStatusChip); }); if(!silent) renderTargets(); }
 window.toggleTargetSound=function(on){ setTargetSoundOn(on); toast('Target sound alerts '+(tgSoundOn?'enabled':'disabled'),'ok'); };
 window.toggleTargetAuto=function(on){ setTargetAutoOn(on); toast('Target auto-refresh '+(tgAutoOn?'enabled':'disabled')+' (75s)','ok'); };
 window.toggleTargetSortDir=function(){ tSortDir=tSortDir==='asc'?'desc':'asc'; if($('tgSortDirBtn')) $('tgSortDirBtn').textContent=tSortDir==='asc'?'↑':'↓'; renderTargets(); };
