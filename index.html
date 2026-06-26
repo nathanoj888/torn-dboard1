@@ -1,6 +1,7 @@
+
 <!DOCTYPE html>
 <!-- saved from url=(0043)https://nathanoj888.github.io/torn-dboard1/ -->
-<html lang="en" data-theme="light" style="background-color: rgb(255, 255, 255); color-scheme: light;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Faction Recon Dashboard v3.7.9.4</title><style>
+<html lang="en" data-theme="light" style="background-color: rgb(255, 255, 255); color-scheme: light;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Faction Recon Dashboard v3.7.9.5</title><style>
 :root{--bg:#000000;--panel:#000000;--panel2:#000000;--input:#21262d;--hover:#30363d;--text:#e6edf3;--muted:#8b949e;--border:#30363d;--accent:#58a6ff;--accent2:#79c0ff;--good:#3fb950;--goodbg:rgba(63,185,80,.12);--bad:#f85149;--badbg:rgba(248,81,73,.12);--warn:#d29922;--warnbg:rgba(210,153,34,.12);--blue:#58a6ff;--bluebg:rgba(88,166,255,.12);--purple:#bc8cff;--purplebg:rgba(188,140,255,.12);--shadow:none}
 [data-theme='light']{--bg:#ffffff;--panel:#ffffff;--panel2:#ffffff;--input:#eef2f6;--hover:#dde4eb;--text:#1f2328;--muted:#57606a;--border:#d0d7de;--accent:#0969da;--accent2:#218bff;--good:#1a7f37;--goodbg:rgba(26,127,55,.10);--bad:#cf222e;--badbg:rgba(207,34,46,.10);--warn:#9a6700;--warnbg:rgba(154,103,0,.10);--blue:#0969da;--bluebg:rgba(9,105,218,.10);--purple:#8250df;--purplebg:rgba(130,80,223,.10);--shadow:none}
 html,body{margin:0;padding:0;min-height:100%;background:var(--bg)!important;color:var(--text)}html[data-theme='dark'],body[data-theme='dark']{background:#000000!important}html[data-theme='light'],body[data-theme='light']{background:#ffffff!important}*{box-sizing:border-box}body{font-family:Segoe UI,Arial,sans-serif}a{color:var(--accent);text-decoration:none}
@@ -40,17 +41,9 @@ html,body{margin:0;padding:0;min-height:100%;background:var(--bg)!important;colo
 
 .wlAlertChip{padding:3px 7px;font-size:10px;border:1px solid var(--border);border-radius:999px;background:var(--panel2);cursor:pointer;color:var(--muted)}
 .wlAlertChip.on{background:var(--accent);color:#fff;border-color:var(--accent)}
-
-/* === v3.7.9.4 Action button alignment === */
 .tbl td.actTd{vertical-align:middle!important;white-space:nowrap;text-align:left}
 .actCell{display:inline-flex!important;gap:6px!important;align-items:center!important;flex-wrap:nowrap!important;vertical-align:middle}
-.actCell>.btn,.actCell>a.btn{
-  display:inline-flex!important;align-items:center!important;justify-content:center!important;
-  height:32px!important;width:36px!important;min-width:36px!important;padding:0!important;
-  line-height:1!important;text-decoration:none!important;box-sizing:border-box!important;
-  font-size:15px!important;white-space:nowrap!important;margin:0!important;
-  border-radius:8px!important;border:1px solid var(--border)!important;
-}
+.actCell>.btn,.actCell>a.btn{display:inline-flex!important;align-items:center!important;justify-content:center!important;height:32px!important;width:36px!important;min-width:36px!important;padding:0!important;line-height:1!important;text-decoration:none!important;box-sizing:border-box!important;font-size:15px!important;white-space:nowrap!important;margin:0!important;border-radius:8px!important;border:1px solid var(--border)!important}
 .actCell>.btn.iconRefresh{background:linear-gradient(135deg,var(--accent),var(--accent2))!important;color:#fff!important;border-color:var(--accent)!important}
 .actCell>.btn.iconRefresh:hover{filter:brightness(1.1)}
 .actCell>a.btn.profile{background:linear-gradient(135deg,var(--accent),#1f6feb)!important;color:#fff!important;border:none!important}
@@ -58,8 +51,6 @@ html,body{margin:0;padding:0;min-height:100%;background:var(--bg)!important;colo
 .actCell>.btn.iconDelete{background:linear-gradient(135deg,#6e7681,#484f58)!important;color:#fff!important;border-color:#484f58!important}
 .actCell>.btn.iconDelete:hover{background:linear-gradient(135deg,#f85149,#c53030)!important;border-color:#c53030!important}
 body[data-compact='1'] .actCell>.btn,body[data-compact='1'] .actCell>a.btn{height:28px!important;width:32px!important;min-width:32px!important;font-size:13px!important}
-
-/* === v3.7.9.4 Compare Presets panel === */
 .presetPanel{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px;margin-top:14px}
 .presetSlot{background:var(--panel2);border:1px solid var(--border);border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:8px}
 .presetSlot.empty{opacity:.7}
@@ -75,7 +66,7 @@ body[data-compact='1'] .actCell>.btn,body[data-compact='1'] .actCell>a.btn{heigh
 
 </style>
 </head><body data-theme="light" data-compact="0" style="background-color: rgb(255, 255, 255);"><div class="toasts" id="tC"></div><div class="ld" id="ld"><div style="text-align:center"><div class="sp"></div><p id="ldT" style="margin-top:8px;color:#fff;font-size:12px">Loading...</p></div></div><div class="app">
-<div class="hdr box"><div class="brand"><span style="font-size:28px">⚔️</span><div><h1>Faction Recon <span style="color:var(--accent)">v3.7.9.4</span></h1><small class="muted">Watchlist · Compare Presets · Uniform Icons</small></div></div><div class="actions"><div class="gauge"><span>API:</span><div class="gbg"><div class="gfill" id="rgF" style="width:0%"></div></div><span id="rgC">0/100</span></div><button class="btn" onclick="TT()">🌗</button><button class="btn" id="compactBtn" onclick="toggleCompact()">📏 Compact</button><button class="btn" onclick="openSettings()">⚙️</button><button class="btn" onclick="exCSV()">📥</button></div></div>
+<div class="hdr box"><div class="brand"><span style="font-size:28px">⚔️</span><div><h1>Faction Recon <span style="color:var(--accent)">v3.7.9.5</span></h1><small class="muted">Watchlist · Compare Presets · Uniform Icons</small></div></div><div class="actions"><div class="gauge"><span>API:</span><div class="gbg"><div class="gfill" id="rgF" style="width:0%"></div></div><span id="rgC">0/100</span></div><button class="btn" onclick="TT()">🌗</button><button class="btn" id="compactBtn" onclick="toggleCompact()">📏 Compact</button><button class="btn" onclick="openSettings()">⚙️</button><button class="btn" onclick="exCSV()">📥</button></div></div>
 <div class="tabs"><button class="tab on" onclick="stab(&#39;recon&#39;,this)">🏴 Recon</button><button class="tab" onclick="stab(&#39;targets&#39;,this)">🎯 Targets</button><button class="tab" onclick="stab(&#39;compare&#39;,this)">⚖️ Compare</button><button class="tab" onclick="stab(&#39;logs&#39;,this)">📜 Logs</button><button class="tab" onclick="stab(&#39;watchlist&#39;,this)">🚨 Watchlist</button></div>
 <div class="pane on" id="t-recon">
 <div class="panel box grid4"><div class="ig"><label>🔑 Torn API Key</label><div class="fieldrow"><input id="aK" type="password" maxlength="16" autocomplete="off"><button class="btn sm" type="button" onclick="toggleSecret(&#39;aK&#39;,this)" title="Show or hide Torn API key">👁️</button><button class="btn sm" type="button" onclick="copyField(&#39;torn&#39;)" title="Copy Torn API key">📋</button><button class="btn sm" type="button" onclick="delSavedField(&#39;torn&#39;)" title="Delete saved Torn API key">🗑️</button></div><div class="tinyline">Last saved: <span class="masked" id="aKM">Not saved</span></div></div><div class="ig"><label>🔐 FFScouter Key</label><div class="fieldrow"><input id="fK" type="password" maxlength="16" placeholder="Optional" autocomplete="off"><button class="btn sm" type="button" onclick="toggleSecret(&#39;fK&#39;,this)" title="Show or hide FFScouter key">👁️</button><button class="btn sm" type="button" onclick="copyField(&#39;ffs&#39;)" title="Copy FFScouter key">📋</button><button class="btn sm" type="button" onclick="delSavedField(&#39;ffs&#39;)" title="Delete saved FFScouter key">🗑️</button></div><div class="tinyline">Last saved: <span class="masked" id="fKM">Not saved</span></div></div><div class="ig"><label>🏴 Faction ID</label><div class="fieldrow"><input id="fI" type="text" inputmode="numeric" autocomplete="off"><button class="btn sm" type="button" onclick="copyField(&#39;fid&#39;)" title="Copy faction ID">📋</button><button class="btn sm" type="button" onclick="delSavedField(&#39;fid&#39;)" title="Delete saved faction ID">🗑️</button></div><div class="tinyline">Last saved: <span class="masked" id="fIM">Not saved</span></div></div><div style="display:flex;gap:6px;flex-wrap:wrap;align-items:end"><button class="btn primary" onclick="ldF()">🔄 Load</button><button class="btn" onclick="svKeys()">💾 Save All</button><button class="btn" onclick="delKeys()">🧹 Delete All</button><button class="btn" onclick="openSettings()">⚙️ Settings</button></div></div>
@@ -215,8 +206,7 @@ body[data-compact='1'] .actCell>.btn,body[data-compact='1'] .actCell>a.btn{heigh
     </table>
   </div>
 </div>
-<div class="foot box"><h4 style="margin:0 0 8px 0">🎨 v3.7.9.4 Compare Presets + Watchlist Build</h4><ul style="margin:0;padding-left:18px"><li>All shadows removed from the source bundle.</li><li>Dark/light mode now hard-forces full black or full white page backgrounds.</li><li>Compare tab supports Local ↔ TCT hourly analysis with dual-display hour labels.</li><li>Executive Comparison Table shows most/least online hour buckets.</li><li>Auto attack windows include a live Attack Now / Wait recommendation based on the current hour.</li><li>Travel ETA and travel countdowns were replaced with Travel Intelligence v2: Returning / Outbound / Abroad, plus route-aware details.</li><li>Compact mode toggle now supports denser Travel Intel cards and icon-only compact button behavior.</li><li>Returning travelers are subtly highlighted as higher-priority rows, and both Recon and Targets include travel filter chips.</li><li>Emergency safe build: release-window monitor is append-only and wrapped in safety guards so existing dashboard buttons are not modified.</li><li>Fix 3: summary cards now support multi-select filtering with live label text and a clear pill, and Targets now shows FFScouter FF / stats columns.</li><li><strong>v3.7.9.4 NEW:</strong> 💾 <strong>Compare Presets (5 slots)</strong> — save full Compare configurations (Torn key, FFScouter key, Faction A &amp; B) with custom names like "Wartopia vs Enemy A" or "Current War Target". One-click Save / Load / Delete per slot. All slots stored locally. Loaded keys are masked in the slot preview (****XXXX).</li><li><strong>v3.7.9.4 NEW:</strong> 🚨 <strong>Watchlist tab</strong> — per-player tracking with toast/sound alerts on Online, Hospital Out, Jail Out, Landed, Travel, Level Up. Auto-poll every 60s. Players, alerts, and auto-poll state persisted.</li><li><strong>v3.7.9.4 fix:</strong> Watchlist Action icons now uniform — 4 distinctly colored buttons (🔄 Refresh / 👤 Profile / ⚔️ Attack / 🗑️ Remove) with consistent 32×36 sizing and centered emoji rendering.</li><li><strong>v3.7.9.4 fix:</strong> Compare tab fields auto-saved &amp; auto-restored on reload (independently of presets).</li><li><strong>v3.7.9.4 fix:</strong> Sandbox-safe localStorage wrapper carried over — runs cleanly in SharePoint preview.</li><li><strong>v3.7.9.4 skipped:</strong> Live Chain Tracker (#20) was <em>not</em> included because it requires the Torn <code>faction/?selections=chain</code> endpoint, which is Faction API access. Tell me if you want it anyway using your existing Torn API key.</li></ul><p style="margin:10px 0 0 0">Built by <strong>Arius777</strong></p></div></div><div class="modal" id="stM" onclick="if(event.target===this)closeSettings()"><div class="modalbox box"><div style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap"><div><h3 style="margin:0">⚙️ Local Settings</h3><div class="settings-note">Manage saved keys, remembered values, and other local preferences in one place.</div></div><button class="btn" type="button" onclick="closeSettings()">✕</button></div><div class="modalgrid" style="margin-top:14px"><div class="sheet"><div class="settings-row"><div><strong>Remember me</strong><div class="settings-note">When turned off, local saving is disabled and stored keys / faction ID are cleared from this browser.</div></div><label class="toggle"><input id="rmTg" type="checkbox" onchange="toggleRemember(this.checked)"><span id="rmTx">On</span></label></div><div class="settings-row"><div><strong>Torn API Key</strong><div class="settings-note">Last saved: <span class="masked" id="smTorn">Not saved</span></div></div><div class="settings-actions"><button class="btn" type="button" onclick="copyField(&#39;torn&#39;)">📋 Copy</button><button class="btn" type="button" onclick="delSavedField(&#39;torn&#39;)">🗑️ Delete</button></div></div><div class="settings-row"><div><strong>FFScouter Key</strong><div class="settings-note">Last saved: <span class="masked" id="smFfs">Not saved</span></div></div><div class="settings-actions"><button class="btn" type="button" onclick="copyField(&#39;ffs&#39;)">📋 Copy</button><button class="btn" type="button" onclick="delSavedField(&#39;ffs&#39;)">🗑️ Delete</button></div></div><div class="settings-row"><div><strong>Faction ID</strong><div class="settings-note">Last saved: <span class="masked" id="smFid">Not saved</span></div></div><div class="settings-actions"><button class="btn" type="button" onclick="copyField(&#39;fid&#39;)">📋 Copy</button><button class="btn" type="button" onclick="delSavedField(&#39;fid&#39;)">🗑️ Delete</button></div></div><div class="settings-row"><div><strong>Current Theme</strong><div class="settings-note">This preference is also stored locally.</div></div><div class="settings-actions"><span class="masked" id="smTheme">Light</span><button class="btn" type="button" onclick="TT();refreshSettingsUI()">🌗 Toggle Theme</button></div></div></div><div style="display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap"><button class="btn" type="button" onclick="svKeys()">💾 Save All</button><button class="btn" type="button" onclick="delKeys()">🧹 Delete All</button><button class="btn primary" type="button" onclick="closeSettings()">Done</button></div></div></div></div><script>
-/* === v3.7.9.4 Sandbox-Safe Storage Prelude === */
+</div><div class="modal" id="stM" onclick="if(event.target===this)closeSettings()"><div class="modalbox box"><div style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap"><div><h3 style="margin:0">⚙️ Local Settings</h3><div class="settings-note">Manage saved keys, remembered values, and other local preferences in one place.</div></div><button class="btn" type="button" onclick="closeSettings()">✕</button></div><div class="modalgrid" style="margin-top:14px"><div class="sheet"><div class="settings-row"><div><strong>Remember me</strong><div class="settings-note">When turned off, local saving is disabled and stored keys / faction ID are cleared from this browser.</div></div><label class="toggle"><input id="rmTg" type="checkbox" onchange="toggleRemember(this.checked)"><span id="rmTx">On</span></label></div><div class="settings-row"><div><strong>Torn API Key</strong><div class="settings-note">Last saved: <span class="masked" id="smTorn">Not saved</span></div></div><div class="settings-actions"><button class="btn" type="button" onclick="copyField(&#39;torn&#39;)">📋 Copy</button><button class="btn" type="button" onclick="delSavedField(&#39;torn&#39;)">🗑️ Delete</button></div></div><div class="settings-row"><div><strong>FFScouter Key</strong><div class="settings-note">Last saved: <span class="masked" id="smFfs">Not saved</span></div></div><div class="settings-actions"><button class="btn" type="button" onclick="copyField(&#39;ffs&#39;)">📋 Copy</button><button class="btn" type="button" onclick="delSavedField(&#39;ffs&#39;)">🗑️ Delete</button></div></div><div class="settings-row"><div><strong>Faction ID</strong><div class="settings-note">Last saved: <span class="masked" id="smFid">Not saved</span></div></div><div class="settings-actions"><button class="btn" type="button" onclick="copyField(&#39;fid&#39;)">📋 Copy</button><button class="btn" type="button" onclick="delSavedField(&#39;fid&#39;)">🗑️ Delete</button></div></div><div class="settings-row"><div><strong>Current Theme</strong><div class="settings-note">This preference is also stored locally.</div></div><div class="settings-actions"><span class="masked" id="smTheme">Light</span><button class="btn" type="button" onclick="TT();refreshSettingsUI()">🌗 Toggle Theme</button></div></div></div><div style="display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap"><button class="btn" type="button" onclick="svKeys()">💾 Save All</button><button class="btn" type="button" onclick="delKeys()">🧹 Delete All</button><button class="btn primary" type="button" onclick="closeSettings()">Done</button></div></div></div></div><script>
 (function(){
   try {
     function makeSafeStorage(label){
@@ -245,9 +235,9 @@ body[data-compact='1'] .actCell>.btn,body[data-compact='1'] .actCell>a.btn{heigh
     }
     clearOverlays();
     document.addEventListener('DOMContentLoaded', clearOverlays);
-    window.addEventListener('error', function(ev){ try { console.error('[FR v3.7.9.4]', ev && ev.message); clearOverlays(); } catch(_){} });
-    window.addEventListener('unhandledrejection', function(ev){ try { console.error('[FR v3.7.9.4] rejection:', ev && ev.reason); clearOverlays(); } catch(_){} });
-  } catch(e){ try{ console.error('[FR v3.7.9.4] prelude failed', e); }catch(_){} }
+    window.addEventListener('error', function(ev){ try { console.error('[FR]', ev && ev.message); clearOverlays(); } catch(_){} });
+    window.addEventListener('unhandledrejection', function(ev){ try { console.error('[FR rejection]', ev && ev.reason); clearOverlays(); } catch(_){} });
+  } catch(e){ try{ console.error('[FR prelude failed]', e); }catch(_){} }
 })();
 </script>
 <script>(function(){const FT={mexico:1560,'cayman islands':2100,cayman:2100,canada:2460,hawaii:8040,'united kingdom':9540,argentina:10020,switzerland:10500,japan:13500,china:14520,'united arab emirates':16260,'south africa':17820},AIRSTRIP_FACTOR=.7;let M=[],FM=[],ffs={},TM=[],tSel={},tSort='status',tSortDir='asc',tPage=1,TPP=10,tStatusChip='all',tTravelChip='all',tgTravelChip='all',summaryCardFilters=[],tgSoundOn=false,tgAutoOn=false,tgAutoT=null,sK='name',sD='asc',cP=1,PP=25,ats=[],sndOn=false,showAll=false,arOn=false,arT=null,cdT=null,cd=0,lT=null,wD=false,alerts={},abSeen={},countryChipFilter='',countrySortMode='online',eventLogs=[],logSeen={},prevStateMap={},estEtaCache={};const $=id=>document.getElementById(id),esc=s=>{const d=document.createElement('div');d.textContent=s||'';return d.innerHTML};const FIELD_MAP={torn:'aK',ffs:'fK',fid:'fI'};let fltTimer=null;const KEY_STORE={torn:'fr369_torn_api_key',ffs:'fr369_ffscouter_key',fid:'fr369_faction_id',remember:'fr369_remember_me',targets:'fr372_target_ids',target_sound:'fr372_target_sound',target_auto:'fr372_target_auto'};const LEGACY_STORE={torn:['fr368_torn_api_key','fr366_torn_api_key'],ffs:['fr368_ffscouter_key','fr366_ffscouter_key'],fid:['fr368_faction_id']};const autoSaveTimers={};function isRememberOn(){return localStorage.getItem(KEY_STORE.remember)!=='0'}function setRememberOn(on){localStorage.setItem(KEY_STORE.remember,on?'1':'0')}function getSavedFieldLabel(kind){return kind==='torn'?'Torn API key':kind==='ffs'?'FFScouter key':'Faction ID'}function getSavedFieldValue(kind){return (($((FIELD_MAP[kind]))||{}).value||'').trim()}function getStoredValue(kind){return localStorage.getItem(KEY_STORE[kind])||''}function validateSavedField(kind,val){if(!val)return{ok:true};if(kind==='fid')return /^[0-9]+$/.test(val)?{ok:true}:{ok:false,msg:'Faction ID must be numeric'};return val.length===16?{ok:true}:{ok:false,msg:(kind==='torn'?'Torn API key':'FFScouter key')+' must be 16 chars'}}function maskStoredValue(val){if(!val)return'Not saved';const tail=val.slice(-4);return '****'+tail}function migrateSavedInputs(){Object.keys(LEGACY_STORE).forEach(kind=>{if(localStorage.getItem(KEY_STORE[kind]))return;for(const legacyKey of LEGACY_STORE[kind]){const legacy=localStorage.getItem(legacyKey);if(legacy){localStorage.setItem(KEY_STORE[kind],legacy);break}}})}function refreshSettingsUI(){const remember=isRememberOn();if($('rmTg'))$('rmTg').checked=remember;if($('rmTx'))$('rmTx').textContent=remember?'On':'Off';if($('aKM'))$('aKM').textContent=remember?maskStoredValue(getStoredValue('torn')):'Remember me is off';if($('fKM'))$('fKM').textContent=remember?maskStoredValue(getStoredValue('ffs')):'Remember me is off';if($('fIM'))$('fIM').textContent=remember?maskStoredValue(getStoredValue('fid')):'Remember me is off';if($('smTorn'))$('smTorn').textContent=remember?maskStoredValue(getStoredValue('torn')):'Remember me is off';if($('smFfs'))$('smFfs').textContent=remember?maskStoredValue(getStoredValue('ffs')):'Remember me is off';if($('smFid'))$('smFid').textContent=remember?maskStoredValue(getStoredValue('fid')):'Remember me is off';if($('smTheme'))$('smTheme').textContent=(document.body.getAttribute('data-theme')||document.documentElement.getAttribute('data-theme')||'dark').replace(/^./,c=>c.toUpperCase())}function loadSavedKeys(){migrateSavedInputs();const remember=isRememberOn();if($('aK'))$('aK').value=remember?getStoredValue('torn'):'';if($('fK'))$('fK').value=remember?getStoredValue('ffs'):'';if($('fI'))$('fI').value=remember?getStoredValue('fid'):'';refreshSettingsUI()}function getTargetRawIds(raw){ return String(raw||'').split(/[^0-9]+/).map(x=>x.trim()).filter(Boolean); }
@@ -467,7 +457,6 @@ try{
   setTimeout(rwInit,1000);
 })();
 })();</script><script>
-/* === v3.7.9.4 Watchlist + Compare-tab persistence + Compare Presets (#9) === */
 (function(){
   const $ = function(id){ return document.getElementById(id); };
   const esc = function(s){ const d = document.createElement('div'); d.textContent = s == null ? '' : String(s); return d.innerHTML; };
@@ -501,81 +490,51 @@ try{
     });
   }
   
-  /* ============ COMPARE TAB FIELD PERSISTENCE ============ */
-  const CMP_KEYS = {
-    cK:  'fr394_cmp_torn_key',
-    cFF: 'fr394_cmp_ffs_key',
-    cA:  'fr394_cmp_faction_a',
-    cBi: 'fr394_cmp_faction_b'
-  };
+  const CMP_KEYS = { cK:'fr395_cmp_torn_key', cFF:'fr395_cmp_ffs_key', cA:'fr395_cmp_faction_a', cBi:'fr395_cmp_faction_b' };
   function loadCmpFields(){
     Object.keys(CMP_KEYS).forEach(function(fid){
-      try {
-        const stored = localStorage.getItem(CMP_KEYS[fid]) || '';
-        const el = $(fid);
-        if (el && stored) el.value = stored;
-      } catch(_){}
+      try { const stored = localStorage.getItem(CMP_KEYS[fid]) || ''; const el = $(fid); if (el && stored) el.value = stored; } catch(_){}
     });
   }
   function bindCmpAutoSave(){
-    let debounceTimers = {};
+    let timers = {};
     Object.keys(CMP_KEYS).forEach(function(fid){
       const el = $(fid); if (!el) return;
       el.addEventListener('input', function(){
-        clearTimeout(debounceTimers[fid]);
-        debounceTimers[fid] = setTimeout(function(){
-          try {
-            const val = (el.value || '').trim();
-            if (val) localStorage.setItem(CMP_KEYS[fid], val);
-            else localStorage.removeItem(CMP_KEYS[fid]);
-          } catch(_){}
+        clearTimeout(timers[fid]);
+        timers[fid] = setTimeout(function(){
+          try { const val = (el.value || '').trim(); if (val) localStorage.setItem(CMP_KEYS[fid], val); else localStorage.removeItem(CMP_KEYS[fid]); } catch(_){}
         }, 350);
       });
     });
   }
   
-  /* ============ #9 COMPARE PRESETS (5 slots) ============ */
-  const CMP_PRESETS_KEY = 'fr394_cmp_presets';
+  const CMP_PRESETS_KEY = 'fr395_cmp_presets';
   const PRESET_COUNT = 5;
   let cmpPresets = [];
-  
   function loadCmpPresets(){
     try { cmpPresets = JSON.parse(localStorage.getItem(CMP_PRESETS_KEY) || '[]') || []; } catch(e){ cmpPresets = []; }
-    // pad to PRESET_COUNT
-    while (cmpPresets.length < PRESET_COUNT){
-      cmpPresets.push({ name: '', cK: '', cFF: '', cA: '', cBi: '', savedAt: 0 });
-    }
+    while (cmpPresets.length < PRESET_COUNT){ cmpPresets.push({ name:'', cK:'', cFF:'', cA:'', cBi:'', savedAt:0 }); }
     cmpPresets = cmpPresets.slice(0, PRESET_COUNT);
   }
   function saveCmpPresets(){ try { localStorage.setItem(CMP_PRESETS_KEY, JSON.stringify(cmpPresets)); } catch(_){} }
-  
-  function maskKey(val){
-    if (!val) return '—';
-    if (val.length <= 4) return '****';
-    return '****' + String(val).slice(-4);
-  }
+  function maskKey(val){ if (!val) return '—'; if (val.length <= 4) return '****'; return '****' + String(val).slice(-4); }
   
   window.cmpPresetsRefresh = function(){ renderCmpPresets(); toast('Presets list refreshed', 'in'); };
-  
   window.cmpPresetSave = function(idx){
-    const slot = cmpPresets[idx]; if (!slot) return;
     const nameEl = document.getElementById('presetName_' + idx);
     const name = (nameEl ? nameEl.value : '').trim() || ('Preset ' + (idx + 1));
-    const cK  = (($('cK')||{}).value || '').trim();
+    const cK = (($('cK')||{}).value || '').trim();
     const cFF = (($('cFF')||{}).value || '').trim();
-    const cA  = (($('cA')||{}).value || '').trim();
+    const cA = (($('cA')||{}).value || '').trim();
     const cBi = (($('cBi')||{}).value || '').trim();
-    if (!cK && !cFF && !cA && !cBi){
-      return toast('Compare fields are empty — nothing to save', 'er');
-    }
-    cmpPresets[idx] = { name: name, cK: cK, cFF: cFF, cA: cA, cBi: cBi, savedAt: Date.now() };
-    saveCmpPresets();
-    renderCmpPresets();
+    if (!cK && !cFF && !cA && !cBi) return toast('Compare fields are empty — nothing to save', 'er');
+    cmpPresets[idx] = { name:name, cK:cK, cFF:cFF, cA:cA, cBi:cBi, savedAt:Date.now() };
+    saveCmpPresets(); renderCmpPresets();
     toast('Saved to slot ' + (idx + 1) + ': ' + name, 'ok');
   };
   window.cmpPresetLoad = function(idx){
-    const slot = cmpPresets[idx]; if (!slot) return;
-    if (!slot.savedAt){ return toast('Slot ' + (idx + 1) + ' is empty', 'er'); }
+    const slot = cmpPresets[idx]; if (!slot || !slot.savedAt) return toast('Slot ' + (idx + 1) + ' is empty', 'er');
     if ($('cK'))  { $('cK').value  = slot.cK  || ''; try { $('cK').dispatchEvent(new Event('input')); } catch(_){} }
     if ($('cFF')) { $('cFF').value = slot.cFF || ''; try { $('cFF').dispatchEvent(new Event('input')); } catch(_){} }
     if ($('cA'))  { $('cA').value  = slot.cA  || ''; try { $('cA').dispatchEvent(new Event('input')); } catch(_){} }
@@ -583,24 +542,20 @@ try{
     toast('Loaded preset: ' + (slot.name || 'Preset ' + (idx + 1)), 'ok');
   };
   window.cmpPresetDelete = function(idx){
-    const slot = cmpPresets[idx]; if (!slot) return;
-    if (!slot.savedAt){ return toast('Slot already empty', 'in'); }
+    const slot = cmpPresets[idx]; if (!slot || !slot.savedAt) return toast('Slot already empty', 'in');
     if (!confirm('Delete preset "' + (slot.name || 'Preset ' + (idx + 1)) + '"?')) return;
-    cmpPresets[idx] = { name: '', cK: '', cFF: '', cA: '', cBi: '', savedAt: 0 };
-    saveCmpPresets();
-    renderCmpPresets();
+    cmpPresets[idx] = { name:'', cK:'', cFF:'', cA:'', cBi:'', savedAt:0 };
+    saveCmpPresets(); renderCmpPresets();
     toast('Preset slot ' + (idx + 1) + ' deleted', 'ok');
   };
   window.cmpPresetsClearAll = function(){
     if (!cmpPresets.some(function(s){ return s.savedAt; })) return toast('No presets saved', 'in');
     if (!confirm('Clear all 5 Compare presets?')) return;
     cmpPresets = [];
-    for (let i = 0; i < PRESET_COUNT; i++) cmpPresets.push({ name: '', cK: '', cFF: '', cA: '', cBi: '', savedAt: 0 });
-    saveCmpPresets();
-    renderCmpPresets();
+    for (let i = 0; i < PRESET_COUNT; i++) cmpPresets.push({ name:'', cK:'', cFF:'', cA:'', cBi:'', savedAt:0 });
+    saveCmpPresets(); renderCmpPresets();
     toast('All preset slots cleared', 'ok');
   };
-  
   function renderCmpPresets(){
     const wrap = $('cmpPresetPanel'); if (!wrap) return;
     wrap.innerHTML = cmpPresets.map(function(slot, i){
@@ -624,10 +579,9 @@ try{
     }).join('');
   }
   
-  /* ============ WATCHLIST ============ */
-  const WL_KEY = 'fr394_watchlist';
-  const WL_ALERTS_KEY = 'fr394_wl_alerts';
-  const WL_AUTO_KEY = 'fr394_wl_auto';
+  const WL_KEY = 'fr395_watchlist';
+  const WL_ALERTS_KEY = 'fr395_wl_alerts';
+  const WL_AUTO_KEY = 'fr395_wl_auto';
   let watchlist = [];
   let wlAlertLog = [];
   let wlAuto = null;
@@ -639,15 +593,10 @@ try{
     try { wlAlertLog = JSON.parse(localStorage.getItem(WL_ALERTS_KEY) || '[]') || []; } catch(e){ wlAlertLog = []; }
     watchlist.forEach(function(w){ 
       if (!w.alerts) w.alerts = Object.assign({}, DEFAULT_ALERTS);
-      Object.keys(DEFAULT_ALERTS).forEach(function(k){
-        if (typeof w.alerts[k] === 'undefined') w.alerts[k] = DEFAULT_ALERTS[k];
-      });
+      Object.keys(DEFAULT_ALERTS).forEach(function(k){ if (typeof w.alerts[k] === 'undefined') w.alerts[k] = DEFAULT_ALERTS[k]; });
     });
     wlRender(); wlRenderAlerts();
-    try {
-      const autoOn = localStorage.getItem(WL_AUTO_KEY) === '1';
-      if (autoOn && $('wlAutoChk')) { $('wlAutoChk').checked = true; window.wlToggleAuto(true); }
-    } catch(_){}
+    try { const autoOn = localStorage.getItem(WL_AUTO_KEY) === '1'; if (autoOn && $('wlAutoChk')) { $('wlAutoChk').checked = true; window.wlToggleAuto(true); } } catch(_){}
   }
   function wlSave(){ try { localStorage.setItem(WL_KEY, JSON.stringify(watchlist)); } catch(_){} }
   function wlSaveAlerts(){ try { localStorage.setItem(WL_ALERTS_KEY, JSON.stringify(wlAlertLog.slice(0, 200))); } catch(_){} }
@@ -657,35 +606,20 @@ try{
     const idEl = $('wlNewId'); const id = (idEl ? idEl.value : '').trim();
     if (!id || !/^[0-9]+$/.test(id)) return toast('Need numeric Player ID', 'er');
     if (watchlist.some(function(w){ return String(w.id) === id; })) return toast('Already on watchlist', 'er');
-    watchlist.push({ id: id, name: 'Loading…', alerts: Object.assign({}, DEFAULT_ALERTS), lastState: null, addedAt: Date.now() });
+    watchlist.push({ id:id, name:'Loading…', alerts:Object.assign({}, DEFAULT_ALERTS), lastState:null, addedAt:Date.now() });
     wlSave(); wlRender();
     if (idEl) idEl.value = '';
     toast('Added ' + id + ' to watchlist', 'ok');
     wlFetchOne(id).then(function(){ wlRender(); updateLastSync(); });
   };
-  window.wlRemove = function(id){
-    watchlist = watchlist.filter(function(w){ return String(w.id) !== String(id); });
-    wlSave(); wlRender(); toast('Removed ' + id, 'ok');
-  };
-  window.wlToggleAlert = function(id, key){
-    const w = watchlist.find(function(x){ return String(x.id) === String(id); });
-    if (!w) return;
-    w.alerts[key] = !w.alerts[key];
-    wlSave(); wlRender();
-  };
-  window.wlClearAll = function(){
-    if (!watchlist.length) return toast('Watchlist already empty', 'in');
-    if (!confirm('Remove all ' + watchlist.length + ' watched players?')) return;
-    watchlist = []; wlSave(); wlRender(); toast('Watchlist cleared', 'ok');
-  };
-  window.wlClearAlerts = function(){
-    wlAlertLog = []; wlSaveAlerts(); wlRenderAlerts(); toast('Alert log cleared', 'ok');
-  };
+  window.wlRemove = function(id){ watchlist = watchlist.filter(function(w){ return String(w.id) !== String(id); }); wlSave(); wlRender(); toast('Removed ' + id, 'ok'); };
+  window.wlToggleAlert = function(id, key){ const w = watchlist.find(function(x){ return String(x.id) === String(id); }); if (!w) return; w.alerts[key] = !w.alerts[key]; wlSave(); wlRender(); };
+  window.wlClearAll = function(){ if (!watchlist.length) return toast('Watchlist already empty', 'in'); if (!confirm('Remove all ' + watchlist.length + ' watched players?')) return; watchlist = []; wlSave(); wlRender(); toast('Watchlist cleared', 'ok'); };
+  window.wlClearAlerts = function(){ wlAlertLog = []; wlSaveAlerts(); wlRenderAlerts(); toast('Alert log cleared', 'ok'); };
   window.wlExport = function(){
     if (!watchlist.length) return toast('Nothing to export', 'er');
-    const blob = new Blob([JSON.stringify(watchlist, null, 2)], { type: 'application/json' });
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob); a.download = 'watchlist_' + new Date().toISOString().slice(0,10) + '.json';
+    const blob = new Blob([JSON.stringify(watchlist, null, 2)], { type:'application/json' });
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'watchlist_' + new Date().toISOString().slice(0,10) + '.json';
     document.body.appendChild(a); a.click();
     setTimeout(function(){ try{ URL.revokeObjectURL(a.href); }catch(_){} a.remove(); }, 0);
     toast('Watchlist exported', 'ok');
@@ -699,14 +633,14 @@ try{
         const raw = String(fr.result || '').trim();
         let arr = [];
         if (raw.startsWith('[')) arr = JSON.parse(raw);
-        else raw.split(/[^0-9]+/).filter(Boolean).forEach(function(id){ arr.push({ id: id, name: 'Loading…', alerts: Object.assign({}, DEFAULT_ALERTS), lastState: null, addedAt: Date.now() }); });
+        else raw.split(/[^0-9]+/).filter(Boolean).forEach(function(id){ arr.push({ id:id, name:'Loading…', alerts:Object.assign({}, DEFAULT_ALERTS), lastState:null, addedAt:Date.now() }); });
         if (!Array.isArray(arr)) throw new Error('Bad file format');
         const existing = {}; watchlist.forEach(function(w){ existing[String(w.id)] = true; });
         let added = 0;
         arr.forEach(function(w){
           if (!w || !w.id) return;
           if (existing[String(w.id)]) return;
-          watchlist.push({ id: String(w.id), name: w.name || 'Loading…', alerts: Object.assign({}, DEFAULT_ALERTS, w.alerts || {}), lastState: w.lastState || null, addedAt: w.addedAt || Date.now() });
+          watchlist.push({ id:String(w.id), name:w.name || 'Loading…', alerts:Object.assign({}, DEFAULT_ALERTS, w.alerts || {}), lastState:w.lastState || null, addedAt:w.addedAt || Date.now() });
           added++;
         });
         wlSave(); wlRender(); toast('Imported ' + added + ' player' + (added === 1 ? '' : 's'), 'ok');
@@ -714,7 +648,6 @@ try{
     };
     fr.readAsText(file); input.value = '';
   };
-  
   async function wlFetchOne(id){
     const ak = getAK();
     if (!ak || ak.length !== 16) { toast('Need 16-char Torn key (Recon tab)', 'er'); return null; }
@@ -723,13 +656,7 @@ try{
       const w = watchlist.find(function(x){ return String(x.id) === String(id); });
       if (!w) return d;
       w.name = d.name || ('Player ' + id);
-      const newState = {
-        status: (d.status && d.status.state) || '',
-        desc:   (d.status && d.status.description) || '',
-        until:  (d.status && d.status.until) || 0,
-        la:     (d.last_action && d.last_action.status) || 'Offline',
-        level:  d.level || 0
-      };
+      const newState = { status:(d.status && d.status.state) || '', desc:(d.status && d.status.description) || '', until:(d.status && d.status.until) || 0, la:(d.last_action && d.last_action.status) || 'Offline', level:d.level || 0 };
       if (w.lastState) wlCheckTriggers(w, w.lastState, newState);
       w.lastState = newState; w.lastFetch = Date.now();
       wlSave();
@@ -747,7 +674,7 @@ try{
     if (a.levelUp   && newS.level > oldS.level) wlFire(w, '⬆️ leveled up to ' + newS.level);
   }
   function wlFire(w, msg){
-    wlAlertLog.unshift({ ts: Date.now(), id: w.id, name: w.name, msg: msg });
+    wlAlertLog.unshift({ ts:Date.now(), id:w.id, name:w.name, msg:msg });
     if (wlAlertLog.length > 200) wlAlertLog = wlAlertLog.slice(0, 200);
     wlSaveAlerts();
     toast(w.name + ' ' + msg, 'ok');
@@ -774,18 +701,13 @@ try{
     if (wlAuto){ clearInterval(wlAuto); wlAuto = null; }
     const el = $('wlAutoState'); if (el) el.textContent = on ? 'On' : 'Off';
     try { localStorage.setItem(WL_AUTO_KEY, on ? '1' : '0'); } catch(_){}
-    if (on){
-      wlAuto = setInterval(function(){ if (watchlist.length) wlPollAll(); }, 60000);
-      toast('Watchlist auto-poll ON (60s)', 'ok');
-    } else { toast('Watchlist auto-poll OFF', 'in'); }
+    if (on){ wlAuto = setInterval(function(){ if (watchlist.length) wlPollAll(); }, 60000); toast('Watchlist auto-poll ON (60s)', 'ok'); }
+    else { toast('Watchlist auto-poll OFF', 'in'); }
   };
   function wlRender(){
     const body = $('wlBody'); if (!body) return;
     const countEl = $('wlCount'); if (countEl) countEl.textContent = watchlist.length;
-    if (!watchlist.length){
-      body.innerHTML = '<tr><td colspan="6" class="empty">No watched players yet — add a Player ID above</td></tr>';
-      return;
-    }
+    if (!watchlist.length){ body.innerHTML = '<tr><td colspan="6" class="empty">No watched players yet — add a Player ID above</td></tr>'; return; }
     const ALERT_CHIPS = [['online','🟢On'],['offline','🔴Off'],['hospOut','🏥Out'],['jailOut','⛓️Out'],['travel','✈️Go'],['landed','🛬Land'],['levelUp','⬆️Lvl']];
     body.innerHTML = watchlist.map(function(w){
       const s = w.lastState || {};
@@ -811,9 +733,7 @@ try{
         '</div></td></tr>';
     }).join('');
   }
-  window.wlFetchOneSafe = function(id){
-    wlFetchOne(id).then(function(){ wlRender(); updateLastSync(); toast('Polled ' + id, 'ok'); });
-  };
+  window.wlFetchOneSafe = function(id){ wlFetchOne(id).then(function(){ wlRender(); updateLastSync(); toast('Polled ' + id, 'ok'); }); };
   function wlRenderAlerts(){
     const el = $('wlAlertLog'); if (!el) return;
     const cEl = $('wlAlertCount'); if (cEl) cEl.textContent = wlAlertLog.length;
@@ -824,16 +744,9 @@ try{
              '<td>' + esc(a.msg) + '</td></tr>';
     }).join('');
   }
-  
-  /* ===================== BOOT =========================== */
   function boot(){
-    try {
-      loadCmpFields();
-      bindCmpAutoSave();
-      loadCmpPresets();
-      renderCmpPresets();
-      wlLoad();
-    } catch(e){ console.error('[FR v3.7.9.4] boot failed', e); }
+    try { loadCmpFields(); bindCmpAutoSave(); loadCmpPresets(); renderCmpPresets(); wlLoad(); }
+    catch(e){ console.error('[FR boot]', e); }
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function(){ setTimeout(boot, 300); });
   else setTimeout(boot, 300);
